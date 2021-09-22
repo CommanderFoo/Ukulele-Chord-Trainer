@@ -63,16 +63,16 @@ function select_chord(chord){
 		if(!the_fret.classList.contains("enabled")){
 			the_fret.classList.add("enabled")
 		}
-
-		let visual = document.querySelector("#current-chord")
-		let img = visual.querySelector("img")
-		let strong = visual.querySelector("strong")
-
-		img.src = "images/chords/" + chord[0].toLowerCase() + ".png"
-		strong.textContent = chord[0]
-
-		visual.style.display = ""
 	}
+
+	let visual = document.querySelector("#current-chord")
+	let img = visual.querySelector("img")
+	let strong = visual.querySelector("strong")
+
+	img.src = "images/chords/" + chord[0].toLowerCase() + ".png"
+	strong.textContent = chord[0]
+
+	visual.style.display = ""
 }
 
 function get_random_chord(){
