@@ -235,9 +235,12 @@ function init(){
 	})
 
 	document.querySelector("body").addEventListener("click", (e) => {
-		overlay.style.display = "none"
-		showing_chords = false
-		this.textContent = "Select Chords"
+		
+		if(e.target.classList.contains("content")){
+			overlay.style.display = "none"
+			showing_chords = false
+			document.querySelector("#select-chords").textContent = "Select Chords"
+		}
 	})
 
 	let chord_spans = document.querySelectorAll("#chords-popup span")
