@@ -220,7 +220,7 @@ function init(){
 
 	let overlay = document.querySelector("#chords-overlay")
 
-	document.querySelector("#select-chords").addEventListener("click", function(){
+	document.querySelector("#select-chords").addEventListener("click", function(e){
 		if(showing_chords){
 			overlay.style.display = "none"
 			showing_chords = false
@@ -230,6 +230,14 @@ function init(){
 			showing_chords = true
 			this.textContent = "Hide Chords"
 		}
+
+		e.stopPropagation()
+	})
+
+	document.querySelector("body").addEventListener("click", (e) => {
+		overlay.style.display = "none"
+		showing_chords = false
+		this.textContent = "Select Chords"
 	})
 
 	let chord_spans = document.querySelectorAll("#chords-popup span")
