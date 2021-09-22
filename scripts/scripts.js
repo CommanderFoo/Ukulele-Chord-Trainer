@@ -269,5 +269,5 @@ function init(){
 	setTimeout(() => {
 		select_chord(get_random_chord())
 		requestAnimationFrame(select_random_chord)
-	}, 3000);
+	}, 2000);
 }
