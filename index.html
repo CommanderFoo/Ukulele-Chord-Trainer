@@ -1,0 +1,261 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Ukulele Chord Trainer</title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="scripts/scripts.js"></script>
+</head>
+<body>
+	<header>
+		<select name="speed" id="speed">
+			<option value="30">30 Seconds</option>
+			<option value="25">25 Seconds</option>
+			<option value="20">20 Seconds</option>
+			<option value="15">15 Seconds</option>
+			<option value="10">10 Seconds</option>
+			<option value="8">8 Seconds</option>
+			<option value="6">6 Seconds</option>
+			<option value="5">5 Seconds</option>
+			<option value="4">4 Seconds</option>
+			<option value="3">3 Seconds</option>
+			<option value="2.5">2.5 Seconds</option>
+			<option value="2">2 Seconds</option>
+			<option value="1.5">1.5 Seconds</option>
+			<option value="1">1 Second</option>
+			<option value=".5">.5 Seconds</option>
+		</select>
+		<button id="select-chords">Select Chords</button>
+		<div id="current-chord" style="display: none;">
+			<span>
+				<img src="images/chords/a.png">
+				<strong>A</strong>
+			</span>
+		</div>
+		<div id="chords-overlay" style="display: none;">
+			<div id="chords-popup">
+				<div>
+					<span>
+						<img src="images/chords/a.png">
+						<strong>A</strong>
+					</span>
+					<span>
+						<img src="images/chords/a7.png">
+						<strong>A7</strong>
+					</span>
+					<span>
+						<img src="images/chords/am.png">
+						<strong>Am</strong>
+					</span>
+					<span>
+						<img src="images/chords/am7.png">
+						<strong>Am7</strong>
+					</span>
+					<span>
+						<img src="images/chords/amaj7.png">
+						<strong>Amaj7</strong>
+					</span>
+					<span>
+						<img src="images/chords/c.png">
+						<strong>C</strong>
+					</span>
+					<span>
+						<img src="images/chords/c7.png">
+						<strong>C7</strong>
+					</span>
+					<span>
+						<img src="images/chords/cm.png">
+						<strong>Cm</strong>
+					</span>
+					<span>
+						<img src="images/chords/cm7.png">
+						<strong>Cm7</strong>
+					</span>
+					<span>
+						<img src="images/chords/cmaj7.png">
+						<strong>Cmaj7</strong>
+					</span>
+					<span>
+						<img src="images/chords/e.png">
+						<strong>E</strong>
+					</span>
+					<span>
+						<img src="images/chords/e7.png">
+						<strong>E7</strong>
+					</span>
+					<span>
+						<img src="images/chords/em.png">
+						<strong>Em</strong>
+					</span>
+					<span>
+						<img src="images/chords/em7.png">
+						<strong>Em7</strong>
+					</span>
+					<span>
+						<img src="images/chords/emaj7.png">
+						<strong>Emaj7</strong>
+					</span>
+					<span>
+						<img src="images/chords/g.png">
+						<strong>G</strong>
+					</span>
+					<span>
+						<img src="images/chords/g7.png">
+						<strong>G7</strong>
+					</span>
+					<span>
+						<img src="images/chords/gm.png">
+						<strong>Gm</strong>
+					</span>
+					<span>
+						<img src="images/chords/gm7.png">
+						<strong>Gm7</strong>
+					</span>
+					<span>
+						<img src="images/chords/gmaj7.png">
+						<strong>Gmaj7</strong>
+					</span>
+				</div>
+				<div>
+					<span>
+						<img src="images/chords/b.png">
+						<strong>B</strong>
+					</span>
+					<span>
+						<img src="images/chords/b7.png">
+						<strong>B7</strong>
+					</span>
+					<span>
+						<img src="images/chords/bm.png">
+						<strong>Bm</strong>
+					</span>
+					<span>
+						<img src="images/chords/bm7.png">
+						<strong>Bm7</strong>
+					</span>
+					<span>
+						<img src="images/chords/bmaj7.png">
+						<strong>Bmaj7</strong>
+					</span>
+					<span>
+						<img src="images/chords/d.png">
+						<strong>D</strong>
+					</span>
+					<span>
+						<img src="images/chords/d7.png">
+						<strong>D7</strong>
+					</span>
+					<span>
+						<img src="images/chords/dm.png">
+						<strong>Dm</strong>
+					</span>
+					<span>
+						<img src="images/chords/dm7.png">
+						<strong>Dm7</strong>
+					</span>
+					<span>
+						<img src="images/chords/dmaj7.png">
+						<strong>Dmaj7</strong>
+					</span>
+					<span>
+						<img src="images/chords/f.png">
+						<strong>F</strong>
+					</span>
+					<span>
+						<img src="images/chords/f7.png">
+						<strong>F7</strong>
+					</span>
+					<span>
+						<img src="images/chords/fm.png">
+						<strong>Fm</strong>
+					</span>
+					<span>
+						<img src="images/chords/fm7.png">
+						<strong>Fm7</strong>
+					</span>
+					<span>
+						<img src="images/chords/fmaj7.png">
+						<strong>Fmaj7</strong>
+					</span>
+					<span class="filler"></span>
+					<span class="filler"></span>
+					<span class="filler"></span>
+					<span class="filler"></span>
+					<span class="filler"></span>
+				</div>
+			</div>
+		</div>
+	</header>	
+	<div class="content">
+		<div class="string g">
+			<ul>
+				<li class="fret fret-12"><span></span></li>
+				<li class="fret fret-11"><span></span></li>
+				<li class="fret fret-10"><span></span></li>
+				<li class="fret fret-9"><span></span></li>
+				<li class="fret fret-8"><span></span></li>
+				<li class="fret fret-7"><span></span></li>
+				<li class="fret fret-6"><span></span></li>
+				<li class="fret fret-5"><span></span></li>
+				<li class="fret fret-4"><span></span></li>
+				<li class="fret fret-3"><span></span></li>
+				<li class="fret fret-2"><span></span></li>
+				<li class="fret fret-1"><span></span></li>
+			</ul>
+		</div>
+		<div class="string c">
+			<ul>
+				<li class="fret fret-12"><span></span></li>
+				<li class="fret fret-11"><span></span></li>
+				<li class="fret fret-10"><span></span></li>
+				<li class="fret fret-9"><span></span></li>
+				<li class="fret fret-8"><span></span></li>
+				<li class="fret fret-7"><span></span></li>
+				<li class="fret fret-6"><span></span></li>
+				<li class="fret fret-5"><span></span></li>
+				<li class="fret fret-4"><span></span></li>
+				<li class="fret fret-3"><span></span></li>
+				<li class="fret fret-2"><span></span></li>
+				<li class="fret fret-1"><span></span></li>
+			</ul>
+		</div>
+		<div class="string e">
+			<ul>
+				<li class="fret fret-12"><span></span></li>
+				<li class="fret fret-11"><span></span></li>
+				<li class="fret fret-10"><span></span></li>
+				<li class="fret fret-9"><span></span></li>
+				<li class="fret fret-8"><span></span></li>
+				<li class="fret fret-7"><span></span></li>
+				<li class="fret fret-6"><span></span></li>
+				<li class="fret fret-5"><span></span></li>
+				<li class="fret fret-4"><span></span></li>
+				<li class="fret fret-3"><span></span></li>
+				<li class="fret fret-2"><span></span></li>
+				<li class="fret fret-1"><span></span></li>
+			</ul>
+		</div>
+		<div class="string a">
+			<ul>
+				<li class="fret fret-12"><span></span></li>
+				<li class="fret fret-11"><span></span></li>
+				<li class="fret fret-10"><span></span></li>
+				<li class="fret fret-9"><span></span></li>
+				<li class="fret fret-8"><span></span></li>
+				<li class="fret fret-7"><span></span></li>
+				<li class="fret fret-6"><span></span></li>
+				<li class="fret fret-5"><span></span></li>
+				<li class="fret fret-4"><span></span></li>
+				<li class="fret fret-3"><span></span></li>
+				<li class="fret fret-2"><span></span></li>
+				<li class="fret fret-1"><span></span></li>
+			</ul>
+		</div>
+	</div>
+	<script>
+
+	init()
+
+	</script>
+</body>
+</html>
