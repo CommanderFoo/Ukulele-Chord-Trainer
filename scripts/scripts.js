@@ -99,6 +99,7 @@ function select_random_chord(ts){
 	if(elapsed >= (speed * 1000)){
 		clear_selected_chord()
 		select_chord(get_random_chord())
+		play_audio()
 
 		elapsed = 0
 		start = 0
@@ -106,6 +107,27 @@ function select_random_chord(ts){
 	}
 
 	requestAnimationFrame(select_random_chord);
+}
+
+let audio_start = 0
+let audio_elapsed = 0
+
+function play_audio(ts){
+	if(audio_start == 0){
+		audio_start = ts
+	}
+
+	audio_elapsed = ts - audio_start
+
+	if(audio_elapsed >= ((speed * 1000) * 2)){
+		let obj = document.querySelector("#sound")
+		obj.play()
+
+		audio_elapsed = 0
+		audio_start = 0
+	}
+
+	requestAnimationFrame(play_audio);
 }
 
 function save_selected_chords(){
@@ -280,5 +302,6 @@ function init(){
 	setTimeout(() => {
 		select_chord(get_random_chord())
 		requestAnimationFrame(select_random_chord)
+		requestAnimationFrame(play_audio)
 	}, 2000);
 }
