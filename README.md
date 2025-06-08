@@ -8,4 +8,4 @@ There is an option to set the speed of the chord change, and also an option to s
 
 ![Select](images/select.png)
 
-<https://popthosepringles.github.io/Ukulele-Chord-Trainer/>
+<https://commanderfoo.github.io/Ukulele-Chord-Trainer/>
